@@ -44,15 +44,16 @@ public class Trainer
 	{
 	}
 
-	public Trainer(String firstname, String lastname, String contactnumber, String email)
+	public Trainer(String firstname, String lastname, String contactnumber, String email, String rating, String gender)
 	{
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.contactnumber = contactnumber;
 		this.email = email;
+		this.rating = rating;
+		this.gender = gender;
 		this.specialities = new HashSet<Speciality>();
 	}
-
 
 	public long getId()
 	{
