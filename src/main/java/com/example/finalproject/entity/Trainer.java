@@ -6,6 +6,7 @@ import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
 public class Trainer
 {
 	@Id
@@ -14,16 +15,16 @@ public class Trainer
 
 	@NotNull
 	@Size(min=1)
-	private String firstname;
+	private String firstName;
 
 	@NotNull
 	@Size(min=1)
-	private String lastname;
+	private String lastName;
 
 
 	@NotNull
 	@Size(min=1)
-	private String contactnumber;
+	private String contactNumber;
 
 	@Column(name="email")
 	private String email;
@@ -37,103 +38,97 @@ public class Trainer
 	private String gender;
 
 
-	@ManyToMany()
-	private Set<Speciality>specialities;
+//	@ManyToMany()
+//	private Set<Speciality>specialities;
+//
+//	@ManyToMany()
+//	private Set<Location>locations;
 
 	public Trainer()
 	{
 	}
 
-	public Trainer(String firstname, String lastname, String contactnumber, String email, String rating, String gender)
+	public Trainer(String firstName, String lastName, String contactNumber, String email, String rating, String gender)
 	{
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.contactnumber = contactnumber;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.contactNumber = contactNumber;
 		this.email = email;
 		this.rating = rating;
 		this.gender = gender;
-		this.specialities = new HashSet<Speciality>();
+//		this.specialities = new HashSet<Speciality>();
+//		this.locations = new HashSet<Location>();
 	}
 
-	public long getId()
-	{
+	public long getId() {
 		return id;
 	}
 
-	public void setId(long id)
-	{
+	public void setId(long id) {
 		this.id = id;
 	}
 
-	public String getFirstname()
-	{
-		return firstname;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirstname(String firstname)
-	{
-		this.firstname = firstname;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getLastname()
-	{
-		return lastname;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLastname(String lastname)
-	{
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public String getContactnumber()
-	{
-		return contactnumber;
+	public String getContactNumber() {
+		return contactNumber;
 	}
 
-	public void setContactnumber(String contactnumber)
-	{
-		this.contactnumber = contactnumber;
+	public void setContactNumber(String contactNumber) {
+		this.contactNumber = contactNumber;
 	}
 
-	public String getEmail()
-	{
+	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email)
-	{
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	public String getRating()
-	{
+	public String getRating() {
 		return rating;
 	}
 
-	public void setRating(String rating)
-	{
+	public void setRating(String rating) {
 		this.rating = rating;
 	}
 
-	public String getGender()
-	{
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(String gender)
-	{
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
+//	public Set<Speciality> getSpecialities()
+//	{
+//		return specialities;
+//	}
+//
+//	public void setSpecialities(Set<Speciality> specialities)
+//	{
+//		this.specialities = specialities;
+//	}
+//
+//	public void addSpeciality(Speciality specialities) {this.specialities.add(specialities);}
+//
+//	public void addLocation(Location locations) {this.locations.add(locations);}
 
-	public Set<Speciality> getSpecialities()
-	{
-		return specialities;
-	}
 
-	public void setSpecialities(Set<Speciality> specialities)
-	{
-		this.specialities = specialities;
-	}
 
-	public void addSpeciality(Speciality specialities) {this.specialities.add(specialities);}
 }

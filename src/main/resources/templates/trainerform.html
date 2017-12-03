@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous"/>
+
+    <!--<link rel="stylesheet" href="/css/Style.css"/>-->
+
+</head>
+<body class="body3">
+
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <!--This will collapse the navigation bar and make it shown while clicking the bar even after min size,-->
+            <!--The Collapse start here-->
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#testNavBar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+
+        <div class="collapse navbar-collapse" id="testNavBar">
+            <!--The Collapse end here-->
+
+            <div class="row">
+                <ul class="nav navbar-nav">
+                    <div class="col-md-6"><li><a href="/">Index Page</a></li></div>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+<form action="#" th:action="@{/processtrainer}" th:object="${trainer}" method="post">
+
+    <input type="hidden" th:field="*{id}"/>
+
+    Firstname: <input type="text" th:field="*{firstName}" placeholder="Enter Trainer Firstname"/>
+    <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span><br/>
+
+    Lastname: <input type="text" th:field="*{lastName}" placeholder="Enter Trainer Firstname"/>
+    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span><br/>
+
+    contactnumber: <input type="text" th:field="*{contactNumber}" placeholder="Enter Trainer Contactnumber"/>
+    <span th:if="${#fields.hasErrors('contactNumber')}" th:errors="*{contactNumber}"></span><br/>
+
+    Email: <input type="text" th:field="*{email}" placeholder="Enter Trainer Email"/>
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span><br/>
+
+    Rating: <input type="text" th:field="*{rating}" placeholder="Enter Trainer Rating"/>
+    <span th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}"></span><br/>
+
+    Gender: <input type="text" th:field="*{gender}" placeholder="Enter Trainer Gender"/>
+    <span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span><br/>
+
+    <input type="submit" value="submit"/>
+
+</form>
+    </div>
+</div>
+</div>
+</body>
+</html>
