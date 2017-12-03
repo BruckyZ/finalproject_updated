@@ -1,7 +1,9 @@
 package com.example.finalproject.controllers;
 
+import com.example.finalproject.entity.Speciality;
 import com.example.finalproject.entity.Trainer;
 import com.example.finalproject.entity.User;
+import com.example.finalproject.repositories.SpecialityRepository;
 import com.example.finalproject.repositories.TrainerRepository;
 import com.example.finalproject.security.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,9 @@ public class MainController {
 
     @Autowired
     TrainerRepository trainerRepository;
+
+    @Autowired
+    SpecialityRepository specialityRepository;
 
     @RequestMapping("/")
     private String mainpage (Model model)
@@ -84,4 +89,22 @@ public class MainController {
         return "trainerlist";
     }
 
+    @GetMapping("/addspeciality")
+    private String addspeciality(Model model)
+    {
+        model.addAttribute("speciality", new Speciality());
+        return "specialityform";
+    }
+
+    @PostMapping("/processspeciality")
+    private String processspeciality(@Valid Speciality speciality, BindingResult result, Model model)
+    {
+        if(result.hasErrors())
+        {
+            return "specialityform";
+        }
+        specialityRepository.save(speciality);
+        model.addAttribute("fitspeciality", specialityRepository.findAll());
+        return "specialitylist";
+    }
 }

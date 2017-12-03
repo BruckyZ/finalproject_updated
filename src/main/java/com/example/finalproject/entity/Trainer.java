@@ -38,8 +38,8 @@ public class Trainer
 	private String gender;
 
 
-//	@ManyToMany()
-//	private Set<Speciality>specialities;
+	@ManyToMany()
+	private Set<Speciality>specialities;
 //
 //	@ManyToMany()
 //	private Set<Location>locations;
@@ -56,7 +56,7 @@ public class Trainer
 		this.email = email;
 		this.rating = rating;
 		this.gender = gender;
-//		this.specialities = new HashSet<Speciality>();
+		this.specialities = new HashSet<Speciality>();
 //		this.locations = new HashSet<Location>();
 	}
 
@@ -115,17 +115,17 @@ public class Trainer
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-//	public Set<Speciality> getSpecialities()
-//	{
-//		return specialities;
-//	}
-//
-//	public void setSpecialities(Set<Speciality> specialities)
-//	{
-//		this.specialities = specialities;
-//	}
-//
-//	public void addSpeciality(Speciality specialities) {this.specialities.add(specialities);}
+	public Set<Speciality> getSpecialities()
+	{
+		return specialities;
+	}
+
+	public void setSpecialities(Set<Speciality> specialities)
+	{
+		this.specialities = specialities;
+	}
+
+	public void addSpeciality(Speciality specialities) {this.specialities.add(specialities);}
 //
 //	public void addLocation(Location locations) {this.locations.add(locations);}
 
