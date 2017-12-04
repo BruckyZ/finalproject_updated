@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Work It!</title>
+    <div th:replace="base::header"></div>
+</head>
+<body>
+
+<!--nav bar and css components-->
+<div th:replace="base :: navigation"></div>
+
+<h2 align="center">CLIENTS LISTS</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default card card-3">
+                <!--<div class="panel-body">-->
+                <table class="table">
+                    <tr>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>ContactNumber</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <!--//        <th>Actions</th>-->
+
+                    </tr>
+                    <tr th:each="client:${allclients}">
+                        <td th:text="${client.firstName}"></td>
+                        <td th:text="${client.lastName}"></td>
+                        <td th:text="${client.contactNumber}"></td>
+                        <td th:text="${client.email}"></td>
+                        <td th:text="${client.gender}"></td>
+                        <!--<td>-->
+                        <!--<a th:href="@{/update/{id}(id=${train.id})}">Update Trainer</a>-->
+                        <!--<a th:href="@{/delete/{id}(id=${train.id})}">Delete Trainer</a>-->
+                        <!--</td>-->
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

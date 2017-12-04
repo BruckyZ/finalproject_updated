@@ -1,8 +1,10 @@
 package com.example.finalproject.controllers;
 
+import com.example.finalproject.entity.Client;
 import com.example.finalproject.entity.Speciality;
 import com.example.finalproject.entity.Trainer;
 import com.example.finalproject.entity.User;
+import com.example.finalproject.repositories.ClientRepository;
 import com.example.finalproject.repositories.SpecialityRepository;
 import com.example.finalproject.repositories.TrainerRepository;
 import com.example.finalproject.security.UserService;
@@ -24,6 +26,10 @@ public class MainController {
     @Autowired
     UserService userService;
 
+
+    @Autowired
+    ClientRepository clientRepository;
+
     @Autowired
     TrainerRepository trainerRepository;
 
@@ -31,10 +37,14 @@ public class MainController {
     SpecialityRepository specialityRepository;
 
     @RequestMapping("/")
-    private String mainpage (Model model)
-    {
+    public String showIndex(Model model){
+        model.addAttribute("allclients", clientRepository.findAll());
         model.addAttribute("fittrain", trainerRepository.findAll());
         return "index";
+    }
+    @RequestMapping("/home")
+    public String showHomePage(){
+        return "home";
     }
 
     @RequestMapping("/login")
@@ -107,4 +117,29 @@ public class MainController {
         model.addAttribute("fitspeciality", specialityRepository.findAll());
         return "specialitylist";
     }
+
+
+    @GetMapping("/addclient")
+    public String addRecordForm(Model model){
+        model.addAttribute("client", new Client());
+        return "addclientform";
+    }
+
+    @PostMapping("/processclientlist")
+    public String processClientForm(@Valid Client client, BindingResult result, Model model){
+        {
+            if(result.hasErrors()){
+                return "addclientform";
+            }
+            clientRepository.save(client);
+            model.addAttribute("allclients",clientRepository.findAll());
+            return "clientlist";
+        }
+    }
+
+    @RequestMapping("/showclientlist")
+    public String showclientlisting(){
+        return "clientlist";
+    }
+
 }

@@ -7,13 +7,13 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
           crossorigin="anonymous"/>
 
-    <!--<link rel="stylesheet" href="/css/Style.css"/>-->
+    <link rel="stylesheet" href="css/index.css"/>
 
 </head>
 <body class="body3">
 
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
 
@@ -34,8 +34,9 @@
 
             <div class="row">
                 <ul class="nav navbar-nav">
-                    <div class="col-md-6"><li><a href="/login">Login</a></li></div>
-                    <div class="col-md-6"><li><a href="/register">Register</a></li></div>
+                    <div class="col-md-5"><li><a href="/login"><strong>Login</strong></a></a></li></div>
+                    <div class="col-md-5"><li><a href="/register"><strong>Register</strong></a></li></div>
+                    <div class="col-md-2" align="right"><li><a href="/"><strong>Logout</strong></a></a></li></div>
 
 
                 </ul>
@@ -46,22 +47,61 @@
     </div>
 </nav>
 
+<!--<h2 align="center"> WELCOME TO WORK-IT-FITNESS CLUB </h2><BR/>-->
 <div class="container">
-            <h2> STUDENT AND INSTRUCTORS DETAIL REPORT </h2>
-        <div class="row">
+                   <div class="row">
             <!--<button><a href="/addcourse">Add_Courses</a></button>-->
-            <div class="col-md-2"><button><a href="/addtrainer">Add_Trainers</a></button></div>
-            <div class="col-md-2"><button><a href="/addspeciality">Add_Specialities</a></button></div>
+            <!--<div class="col-md-6"><button><a href="/addtrainer">Add_Trainers</a></button></div>-->
+            <!--<div class="col-md-6"><button><a href="/addspeciality">Add_Specialities</a></button></div>-->
+            <!--<div class="col-md-6"><button><a href="/addclient">Add_Clients</a></button></div>-->
 
+                       <div class="container">   <!--This put the below inside the container-->
+
+                           <div class="row">
+                               <h3 class=" medium well" align="center"><strong> WELCOME TO WORK-IT-FITNESS CLUB</strong></h3>            <!--This put it inside a well-->
+
+                               <div class="well col-md-6">                <!--This put it inside a well with a size of hald (6) check it with 12,8-->
+                                   <a href="/addclient">           <!--When image clicked it will refer back to the webpage-->
+                                       <img class="standardimage1 img"  src="https://www.nasm.org/images/nasm.org/Page-Content/how-to-become-a-trainer-1.jpg?sfvrsn=2"
+                                           ,align="right" >
+                                       <div class="caption">          <!--This help to add name below the image-->
+                                           <strong><p class="text-uppercase">Add_Clients</p></strong>
+                                       </div>
+                                   </a>
+
+                                   <a href="/addtrainer">          <!--When image clicked it will ref er back to the webpage-->
+                                       <img class="standardimage1 img"  src="http://wembleycrown.com/wp-content/uploads/2015/07/Fitness-Trainers1.jpg"><!--This put the image with a standard size which is set in the CSStabs check (Style.css and that size will be called here)-->
+                                       <div class="caption">    <!--This use to put the text and the image in the same row, you can write text next to image as show-->
+                                           <strong><p class="text-uppercase">Add_Trainers</p></strong>
+                                       </div>
+                                   </a>
+
+                                   <a href="/addspeciality">           <!--When image clicked it will refer back to the webpage-->
+                                       <img class="standardimage1 img" src ="https://whatsnewinfitness.com.au/wp-content/uploads/Online-Commercial-Gym-Equipment-Auction.jpg"/>
+                                       <div class="caption">
+                                           <strong><p class="text-uppercase">Add_Specialities</p></strong>
+                                       </div>
+                                   </a>
+
+                               </div>
+
+
+
+                           </div>
+
+                       </div>
+                   </div>
 </div>
 </div>
+
 <script
         src="https://code.jquery.com/jquery-3.2.1.js"
         integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
         crossorigin="anonymous">
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript Get it from bootstarp website-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
 </body>
 </html>

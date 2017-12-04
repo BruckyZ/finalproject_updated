@@ -1,0 +1,370 @@
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    background: #081136;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-size: 1.4rem;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+body:after {
+    content: "";
+    opacity: .3;
+    position: fixed;
+    /*background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/77302/squrl-site-bg-1.jpg") no-repeat center right;*/
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+p {
+    font-size: 1.8rem;
+    margin: 0 0 10px;
+}
+p.headline {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h1, h2, h3 {
+    font-weight: 900;
+    letter-spacing: .01em;
+    margin: 0 0 20px;
+    padding: 0;
+}
+
+h1 {
+    font-size: 6.4rem;
+}
+
+h2 {
+    font-size: 4.8rem;
+}
+
+.btn {
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: .06rem;
+    margin: 0;
+    padding: 15px 30px;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 100;
+}
+
+.btn-tang {
+    background: #F2653A;
+    color: #FFDC3D;
+    display: inline-block;
+    text-align: center;
+}
+.btn-tang:hover {
+    background: #f15c2e;
+    color: #ffda30;
+}
+
+.site {
+    background: #eee;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.7);
+    font-size: 1.0rem;
+    height: 100%;
+    position: relative;
+    max-width: 90vw;
+    width: 100%;
+    z-index: 10;
+}
+
+.site-masthead {
+    position: relative;
+    z-index: 10;
+}
+
+.site-masthead-logo {
+    height: 28px;
+    left: 20px;
+    position: fixed;
+    top: 20px;
+    width: 160px;
+}
+.site-masthead-logo > div {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    position: relative;
+    vertical-align: middle;
+}
+.site-masthead-logo svg {
+    height: 100%;
+    width: 100%;
+}
+.site-masthead-logo g {
+    fill: #999;
+}
+
+.site-masthead-logo-emblem {
+    top: -3px;
+    width: 22px;
+}
+
+.site-masthead-logo-type {
+    width: 111px;
+}
+
+.site-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    z-index: 10;
+    top: 50%;
+    position: absolute;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    position: fixed;
+}
+
+.site-nav-element {
+    width: auto;
+}
+.site-nav-element:nth-child(1) .site-nav-link {
+    background: #ddd;
+}
+.site-nav-element:nth-child(2) .site-nav-link {
+    background: #ccc;
+}
+.site-nav-element:nth-child(3) .site-nav-link {
+    background: #bbb;
+}
+.site-nav-element:nth-child(4) .site-nav-link {
+    background: #aaa;
+}
+.site-nav-element:nth-child(5) .site-nav-link {
+    background: #999;
+}
+
+.site-nav-link {
+    background: #ddd;
+    border-radius: 0 40px 40px 0;
+    cursor: pointer;
+    display: inline-block;
+    padding: 20px 40px 20px 20px;
+    width: auto;
+    -webkit-transition: all 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+    transition: all 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+}
+.site-nav-link:hover {
+    padding: 20px 40px 20px 30px;
+}
+
+.site-nav-text {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: auto;
+}
+
+.site-help {
+    bottom: 20px;
+    left: 20px;
+    position: fixed;
+    z-index: 10;
+}
+.site-help i {
+    color: #999;
+    font-size: 2.4rem;
+}
+
+.site-block {
+    background: #ddd;
+    padding: 120px 0 0 0;
+    width: 100%;
+}
+
+.site-block-yellow {
+    background-color: #FFDC3D;
+}
+.header {
+    color: #F2653A;
+    padding: 120px;
+}
+
+.body {
+    padding-bottom: 50px;
+    padding: 120px;
+    width: 60%;
+}
+.site-block-content .site-nav-sub {
+    text-align: center;
+    width: 60%;
+}
+.site-block-content .site-nav-sub-button {
+    width: 100%;
+}
+
+.site-hero {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/77302/squrl-hero-bg.jpg") no-repeat center top;
+    background-size: cover;
+    position: relative;
+    height: 95vh;
+    width: 100%;
+}
+
+.site-hero-content {
+    background: rgba(255, 255, 255, 0.9);
+    bottom: 0;
+    padding: 40px 40px 40vh 40px;
+    position: absolute;
+    right: 0;
+    width: 45%;
+}
+
+.site-nav-sub {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+.site-nav-sub.bottom {
+    bottom: 0;
+}
+.site-nav-sub.left {
+    left: 0;
+}
+.site-nav-sub.yellow .site-nav-sub-ele:after {
+    background: #FFDC3D;
+    z-index: 1;
+    width: 480px;
+}
+.site-nav-sub.gold .site-nav-sub-ele:after {
+    background: #FFBD3D;
+    z-index: 1;
+}
+
+.site-nav-sub-ele {
+    padding: 10px;
+    /*position: relative;*/
+    /*width: 100%;*/
+}
+.site-nav-sub-ele:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.site-nav-sub-ele:nth-child(1):after {
+    opacity: 0.3;
+}
+.site-nav-sub-ele:nth-child(2):after {
+    opacity: 0.6;
+}
+
+.site-nav-sub-link {
+    color: #222;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: .03em;
+    padding: 15px 30px;
+    text-transform: uppercase;
+}
+.site-nav-sub-link:hover {
+    text-decoration: none;
+}
+.site-nav-sub-link span {
+    display: block;
+    position: relative;
+    z-index: 10;
+}
+
+.site-invid {
+    background-image: url("https://dl.dropboxusercontent.com/u/80054631/squrl/squrl-indiv-bg.png");
+    background-repeat: no-repeat;
+    background-position: right 40px;
+    background-size: 25%;
+}
+
+/*Column grid CSS*/
+
+body { margin: 0; background: #333;   color: #000000; }
+header {
+    max-width: 1024px;
+    padding: .5vw;
+    font-size: 0;
+    display: -ms-flexbox;
+    -ms-flex-wrap: wrap;
+    -ms-flex-direction: column;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    display: -webkit-box;
+    display: flex;
+}
+header div {
+    -webkit-box-flex: auto;
+    -ms-flex: auto;
+    flex: auto;
+    width: 200px;
+    margin-left: 20px ;
+}
+header div img {
+    width: 100%;
+    height: auto;
+}
+
+.item {
+    width: 100%;
+    background: #ffffff;
+    margin: 0px auto;
+    text-align: left;
+    padding: 25px 0px 25px 0px;
+
+}
+
+.item a {
+    display: block;
+    color: #000000;
+    text-decoration: none;
+}
+
+.item a:hover {
+    display: block;
+    color: #0a5d9e;
+    text-decoration: underline;
+}
+
+.item-heading {
+    font-size: 18px;
+    font-family: 'Roboto slab', sans-serif;
+    font-weight: 800;
+    line-height: 1.3em;
+    margin: 0 0 10px 0;
+}
+
+.item-desc {
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 1.4em;
+    position: relative;
+
+
+@media screen and (max-width: 400px) {
+    header div { margin: 0; }
+    header { padding: 0; }
+
+}

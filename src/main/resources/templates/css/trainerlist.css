@@ -1,0 +1,30 @@
+body3{
+    padding-top: 100px;
+}
+
+
+.testNavBar{
+margin: 0 auto;
+    width: 500px;
+    float: center;
+    font-family: "Lato", sans-serif;
+    color:gray;
+}
+
+
+
+table {
+    font-family: "Lato", sans-serif;
+    color: #00c7c8;
+    font-size: 16px;
+}
+
+.trainer:${fittrain} {
+    font-family: "Lato", sans-serif;
+    color: #00c7c8;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: #00c7c8;;
+}
