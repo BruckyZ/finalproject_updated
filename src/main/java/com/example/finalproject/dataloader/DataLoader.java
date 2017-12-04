@@ -2,8 +2,11 @@ package com.example.finalproject.dataloader;
 
 
 
+import com.example.finalproject.entity.Client;
 import com.example.finalproject.entity.Role;
+import com.example.finalproject.entity.Trainer;
 import com.example.finalproject.entity.User;
+import com.example.finalproject.repositories.ClientRepository;
 import com.example.finalproject.repositories.RoleRepository;
 import com.example.finalproject.repositories.TrainerRepository;
 import com.example.finalproject.repositories.UserRepository;
@@ -26,6 +29,9 @@ public class DataLoader implements CommandLineRunner {
     @Autowired
     TrainerRepository trainerRepository;
 
+    @Autowired
+    ClientRepository clientRepository;
+
 
 
     @Override
@@ -44,6 +50,17 @@ public class DataLoader implements CommandLineRunner {
         user.addRole(appRoles.findByRole("ADMIN"));
         userRepo.save(user);
 
+        Client client = new Client("Jim", "Gray", "3016310818", "jim@montgormerycollege.edu", "Male");
+        clientRepository.save(client);
 
+        Client client2 = new Client("Rachel","Turner","3457896081","Sally@gmail.com","Female");
+        clientRepository.save(client2);
+
+
+        Trainer trainer = new Trainer("Sally", "Turner", "3457896081", "Sally@gmail.com", "5 Stars", "female");
+        trainerRepository.save(trainer);
+
+        Trainer trainer2 = new Trainer("Jack","Pine","3017345681","Jack@gmail.com","5 Stars","Male");
+        trainerRepository.save(trainer2);
     }
 }

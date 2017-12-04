@@ -1,10 +1,8 @@
 package com.example.finalproject.controllers;
 
-import com.example.finalproject.entity.Client;
-import com.example.finalproject.entity.Speciality;
-import com.example.finalproject.entity.Trainer;
-import com.example.finalproject.entity.User;
+import com.example.finalproject.entity.*;
 import com.example.finalproject.repositories.ClientRepository;
+import com.example.finalproject.repositories.ExperianceRepository;
 import com.example.finalproject.repositories.SpecialityRepository;
 import com.example.finalproject.repositories.TrainerRepository;
 import com.example.finalproject.security.UserService;
@@ -12,11 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 
@@ -35,6 +31,9 @@ public class MainController {
 
     @Autowired
     SpecialityRepository specialityRepository;
+
+    @Autowired
+    ExperianceRepository experianceRepository;
 
     @RequestMapping("/")
     public String showIndex(Model model){
@@ -141,5 +140,47 @@ public class MainController {
     public String showclientlisting(){
         return "clientlist";
     }
+
+
+    @GetMapping("/addexperiance")
+    public String addexperianceForm(Model model){
+        model.addAttribute("experiance", new Experiance());
+        return "experianceform";
+    }
+
+    @PostMapping("/processexperiancelist")
+    public String processexperianceform(@Valid Experiance experiance, BindingResult result, Model model){
+        {
+            if(result.hasErrors()){
+                return "experianceform";
+            }
+            experianceRepository.save(experiance);
+            model.addAttribute("allexperiance",experianceRepository.findAll());
+            return "experiancelist";
+        }
+    }
+
+
+    @GetMapping("/addTrainertoExperiance/{id}")                 //Experiance mapped by Trainer
+    public String addStudents(@PathVariable("id") long trainerid, Model model)
+    {
+
+        model.addAttribute("trainer", trainerRepository.findOne(new Long(trainerid)));
+        model.addAttribute("experiancelist", experianceRepository.findAll());
+        return "traineraddexperiance";
+    }
+    @PostMapping("/addTrainertoExperiance")
+    public String addTrainertoExperiance(HttpServletRequest request, Model model)
+    {
+        String trainerId = request.getParameter("trainerId");
+        String experianceid = request.getParameter("experianceid");
+        Trainer trainer=trainerRepository.findOne(new Long(trainerId));
+        trainer.addExperiance(experianceRepository.findOne(new Long(experianceid)));
+        trainerRepository.save(trainer);
+        model.addAttribute("experiancelist", experianceRepository.findAll());
+        model.addAttribute("trainerlist", trainerRepository.findAll());
+        return "redirect:/";
+    }
+
 
 }

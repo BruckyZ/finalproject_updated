@@ -28,6 +28,9 @@ public class Speciality
     @ManyToMany(mappedBy = "specialities")
     private Set<Trainer> training;
 
+    @ManyToMany(mappedBy = "specialities")
+    private Set<Client> clients;
+
     public Speciality() {
     }
 
@@ -36,6 +39,7 @@ public class Speciality
         this.experiance = experiance;
         this.description = description;
         this.training=new HashSet<Trainer>();
+        this.clients=new HashSet<Client>();
     }
 
     public long getId() {
