@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Appointments List</title>
+    <div th:replace="base::header"></div>
+    <link rel="stylesheet" th:href="@{/css/appointstyle.css}" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous"/>
+
+</head>
+<body>
+<div class="container">
+    <!--nav bar and css components-->
+    <div th:replace="base :: navigation"></div>
+    <h1 class="text-center">Appointment List</h1>
+
+    <table>
+        <tr>
+            <th>Appointment Number</th>
+            <th>Preferred Date</th>
+            <th>Preferred Time</th>
+            <th>Preferred Location</th>
+            <th>Preferred Trainer</th>
+            <th>Appointment Status</th>
+        </tr>
+
+
+        <tr th:each="appointment : ${allappointments}">
+            <td th:text="${appointment.appointNum}"></td>
+            <td th:text="${appointment.preferDate}"></td>
+            <td th:text="${appointment.preferTime}"></td>
+            <td th:text="${appointment.preferLocation}"></td>
+            <td th:text="${appointment.preferTrainer}"></td>
+            <td th:text="${appointment.appointStatus}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

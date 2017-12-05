@@ -19,10 +19,11 @@
 
 
                     <div class="form-group">
-                        <label>Location:</label>
+                        <label>location:</label>
                         <input class="form-control" type="text" th:field="*{location}" placeholder="location">
                         <span th:if="${#fields.hasErrors('location')}" th:errors="*{location}"></span><br/>
                     </div>
+
 
                     <input call="btn btn-default" type="submit" value="Add Location"/>
 

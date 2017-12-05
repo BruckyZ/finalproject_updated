@@ -35,6 +35,9 @@ public class MainController {
     @Autowired
     LocationRepository locationRepository;
 
+    @Autowired
+    AppointmentRepository appointmentRepository;
+
     @RequestMapping("/")
     public String showIndex(Model model){
         model.addAttribute("allclients", clientRepository.findAll());
@@ -153,7 +156,7 @@ public class MainController {
             }
             locationRepository.save(location);
             model.addAttribute("alllocation",locationRepository.findAll());
-            return "locaitonlist";
+            return "locationlist";
         }
     }
 
@@ -181,6 +184,19 @@ public class MainController {
         }
     }
 
+    @GetMapping("/addappointment")
+    private String addAppointment(Model model)
+    {
+        model.addAttribute("appointment", new Appointment());
+        return "appointmentform";
+    }
+
+    @PostMapping("/processappointment")
+    private String processAppointment(@Valid Appointment appointment, Model model)
+    {
+        model.addAttribute("allappointments", appointmentRepository.findAll());
+        return "appointmentlist";
+    }
 
     @GetMapping("/addTrainertoExperiance/{id}")                 //Experiance mapped by Trainer
     public String addStudents(@PathVariable("id") long experianceID, Model model)

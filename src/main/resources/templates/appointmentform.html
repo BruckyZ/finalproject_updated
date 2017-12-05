@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head th:replace="base::header">
+    <meta charset="UTF-8" />
+    <title>WorkFit Appointment Form</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+    <!--My additional bootstrap-->
+    <link rel="stylesheet" th:href="@{/css/appointstylecss.css}" type="text/css"/>
+
+
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well-block">
+                <div class="well-title">
+                    <h2>WorkFit Appointment Form</h2>
+                </div>
+                <form>
+                    <!-- Form start: Client Name -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input id="name" name="name" type="text" placeholder=" Client Name">
+                            <select  class="selectpicker">
+                                <option th:each="client : ${allclients}"
+                                th:text="${client.firstName}">Client Name</option>
+                            </select>
+                            </div>
+                        </div>
+                        <!-- Text input: Client Email-->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" for="email">Email</label>
+                                <input id="email" name="email" type="text" placeholder=" Client E-Mail" class="form-control input-md">
+                            </div>
+                        </div>
+                        <!-- Text input: Date-->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" for="date">Preferred Date</label>
+                                <input id="date" name="date" type="text" placeholder="Preferred Date" class="form-control input-md">
+
+                            </div>
+                            <!-- Select Time -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" for="time">Preferred Time</label>
+                                    <select  class="selectpicker" id="time" name="time" class="form-control">
+                                        <option value="8:00 to 9:00">8:00am to 9:00am</option>
+                                        <option value="9:00 to 10:00">9:00am to 10:00am</option>
+                                        <option value="10:00 to 1:00">10:00am to 11:00am</option>
+                                        <option value="8:00 to 9:00">11:00am to 12:00pm</option>
+                                        <option value="9:00 to 10:00">1:00pm to 2:00pm</option>
+                                        <option value="10:00 to 1:00">2:00pm to 3:00pm</option>
+                                        <option value="8:00 to 9:00">4:00pm to 5:00pm</option>
+                                        <option value="9:00 to 10:00">6:00pm to 7:00pm</option>
+                                        <option value="10:00 to 1:00">8:00pm to 9:00pm</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--Select Location -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" for="time">Preferred Location by County</label>
+                                    <select class="selectpicker"  id="location" name="location" class="form-control">
+                                        <option value="Montgomery">Montgomery</option>
+                                        <option value="Fredrick">Fredrick</option>
+                                        <option value="Prince George">Prince George's</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Select Trainer -->
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label" for="appointmentfor">Appointment For</label>
+                                    <select class="selectpicker"  id="appointmentfor" name="appointmentfor" class="form-control">
+                                        <option value="Service#1">Trainer#1</option>
+                                        <option value="Service#2">Trainer#2</option>
+                                        <option value="Service#3">Trainer#3</option>
+                                        <option value="Service#4">Trainer#4</option>
+                                        <option value="Service#5">Trainer#5</option>
+                                        <option value="Service#6">Trainer#6</option>
+                                        <option value="Service#7">Trainer#7</option>
+                                        <option value="Service#8">Trainer#8</option>
+                                        <option value="Service#9">Trainer#9</option>
+                                        <option value="Service#10">Trainer#10</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Button -->
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <button id="singlebutton" name="singlebutton" class="btn btn-default">Make An Appointment</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- form end -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="well-block">
+                <div class="well-title">
+                    <h2>Why Appointment with Us</h2>
+                </div>
+                <div class="feature-block">
+                    <div class="feature feature-blurb-text">
+                        <h4 class="feature-title">24/7 Hours Available</h4>
+                        <div class="feature-content">
+                            <p>WorkFit offers 24 hour access to our services online and on-site.</p>
+                        </div>
+                    </div>
+                    <div class="feature feature-blurb-text">
+                        <h4 class="feature-title">Experienced Staff Available</h4>
+                        <div class="feature-content">
+                            <p>Train with our hardest working staff to get to where you want to be physically and mentally. </p>
+                        </div>
+                    </div>
+                    <div class="feature feature-blurb-text">
+                        <h4 class="feature-title">Low Price & Fees</h4>
+                        <div class="feature-content">
+                            <p>Start with a one week trial and sign-up for our membership, starting at $10 per month.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>Work It!</title>
@@ -11,7 +11,7 @@
 <div th:replace="base :: navigation"></div>
 
 
-<h2 align="center">Location LISTS</h2>
+<h2 align="center">LOCATION LISTS</h2>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -19,13 +19,13 @@
                 <!--<div class="panel-body">-->
                 <table class="table">
                     <tr>
-                        <th>Location</th>
+                        <th>location</th>
 
                         <!--//        <th>Actions</th>-->
 
                     </tr>
-                    <tr th:each="location:${alllocation}">
-                        <td th:text="${location.location}"></td>
+                    <tr th:each="locate:${alllocation}">
+                        <td th:text="${locate.location}"></td>
 
                         <!--<td>-->
                         <!--<a th:href="@{/update/{id}(id=${train.id})}">Update Trainer</a>-->
