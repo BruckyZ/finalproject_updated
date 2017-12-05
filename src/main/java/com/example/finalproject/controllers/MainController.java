@@ -39,6 +39,7 @@ public class MainController {
     public String showIndex(Model model){
         model.addAttribute("allclients", clientRepository.findAll());
         model.addAttribute("fittrain", trainerRepository.findAll());
+        model.addAttribute("allexperiance", experianceRepository.findAll());
         return "index";
     }
     @RequestMapping("/home")
@@ -82,6 +83,7 @@ public class MainController {
     @GetMapping("/addtrainer")
     private String addtrainer(Model model)
     {
+        Trainer trainer= new Trainer();
         model.addAttribute("trainer", new Trainer());
         return "trainerform";
     }
@@ -162,23 +164,23 @@ public class MainController {
 
 
     @GetMapping("/addTrainertoExperiance/{id}")                 //Experiance mapped by Trainer
-    public String addStudents(@PathVariable("id") long trainerid, Model model)
+    public String addStudents(@PathVariable("id") long experianceID, Model model)
     {
 
-        model.addAttribute("trainer", trainerRepository.findOne(new Long(trainerid)));
-        model.addAttribute("experiancelist", experianceRepository.findAll());
+        model.addAttribute("allexperiance", experianceRepository.findOne(new Long(experianceID)));
+        model.addAttribute("fittrain", trainerRepository.findAll());
         return "traineraddexperiance";
     }
-    @PostMapping("/addTrainertoExperiance")
-    public String addTrainertoExperiance(HttpServletRequest request, Model model)
+    @PostMapping("/addTrainertoExperiance/{trainid}")
+    public String addTrainertoExperiance(@RequestParam("experiances")
+        String experianceID,@PathVariable("trainid")long trainID,
+        @ModelAttribute("anexperiance") Experiance E, Model model)
     {
-        String trainerId = request.getParameter("trainerId");
-        String experianceid = request.getParameter("experianceid");
-        Trainer trainer=trainerRepository.findOne(new Long(trainerId));
-        trainer.addExperiance(experianceRepository.findOne(new Long(experianceid)));
-        trainerRepository.save(trainer);
-        model.addAttribute("experiancelist", experianceRepository.findAll());
-        model.addAttribute("trainerlist", trainerRepository.findAll());
+        Trainer T=trainerRepository.findOne(new Long(trainID));
+        T.addExperiance(experianceRepository.findOne(new Long(experianceID)));
+        trainerRepository.save(T);
+        model.addAttribute("allexperiance", experianceRepository.findAll());
+        model.addAttribute("fittrain", trainerRepository.findAll());
         return "redirect:/";
     }
 
