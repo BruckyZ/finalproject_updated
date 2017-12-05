@@ -1,25 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org"
-      xmlns:sec="www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title> Spring Security Example </title>
+    <title>Add a Location</title>
+    <div th:replace="base::header"></div>
 </head>
 <body>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br/><br/><br/><br/><br/><br/><br/>
+            <h4 align="center"><strong>Login Here</strong></h4>
+
 
 <div th:if="${param.error}"> Invaild username and password </div>
 <div th:if="${param.logout}"> You have logged out </div>
 
 <form th:action="@{/login}" method="post">
 
-    <div><label>UserName:<input type="text" name="username"/></label></div>
-    <div><label>Password:<input type="password" name="password"/></label></div>
+    <div align="center"><label>UserName:<input type="text" name="username"/></label></div>
+    <div align="center"><label>Password:<input type="password" name="password"/></label></div>
 
-    <div><input type="submit" value="sign in"/></div>
+    <div align="center"><input type="submit" value="sign in"/></div>
 
-
+<br/>
 </form>
-<a href="/register">Register</a>
-
+            <div align="center">
+<button><a href="/register">Register</a></button></div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
