@@ -2,40 +2,29 @@
 <html xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Add a Client</title>
+    <title>Add a Location</title>
     <div th:replace="base::header"></div>
 </head>
 <body>
 
 
-<form th:action="@{/processspeciality}" th:object="${speciality}" method="post"><!--nav bar and css components-->
+<form th:action="@{/processlocationlist}" th:object="${location}" method="post"><!--nav bar and css components-->
     <div th:replace="base :: navigation"></div>
     <div class="container">
         <div class="col-lg-6 col-lg-offset-3">
-            <h2>Add A Speciality</h2>
+            <h2>Add A Location</h2>
             <div class="panel panel-default card card-3">
                 <div class="panel-body">
                     <input type="hidden" th:field="*{id}" placeholder="Enter the Speciality's information">
 
 
                     <div class="form-group">
-                        <label>ExerciseType:</label>
-                        <input class="form-control" type="text" th:field="*{exercise}" placeholder="Exercise">
-                        <span th:if="${#fields.hasErrors('exercise')}" th:errors="*{exercise}"></span><br/>
-                    </div>
-                    <div class="form-group">
-                        <label>Experiance:</label>
-                        <input class="form-control" type="text" th:field="*{experiance}" placeholder="Experiance">
-                        <span th:if="${#fields.hasErrors('experiance')}" th:errors="*{experiance}"></span><br/>
-                    </div>
-                    <div class="form-group">
-                        <label>Description:</label>
-                        <input class="form-control" type="text" th:field="*{description}" placeholder="Description">
-                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span><br/>
+                        <label>Location:</label>
+                        <input class="form-control" type="text" th:field="*{location}" placeholder="location">
+                        <span th:if="${#fields.hasErrors('location')}" th:errors="*{location}"></span><br/>
                     </div>
 
-
-                    <input call="btn btn-default" type="submit" value="Add Client"/>
+                    <input call="btn btn-default" type="submit" value="Add Location"/>
 
                 </div>
             </div>

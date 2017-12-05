@@ -1,10 +1,7 @@
 package com.example.finalproject.controllers;
 
 import com.example.finalproject.entity.*;
-import com.example.finalproject.repositories.ClientRepository;
-import com.example.finalproject.repositories.ExperianceRepository;
-import com.example.finalproject.repositories.SpecialityRepository;
-import com.example.finalproject.repositories.TrainerRepository;
+import com.example.finalproject.repositories.*;
 import com.example.finalproject.security.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,6 +31,9 @@ public class MainController {
 
     @Autowired
     ExperianceRepository experianceRepository;
+
+    @Autowired
+    LocationRepository locationRepository;
 
     @RequestMapping("/")
     public String showIndex(Model model){
@@ -135,6 +135,25 @@ public class MainController {
             clientRepository.save(client);
             model.addAttribute("allclients",clientRepository.findAll());
             return "clientlist";
+        }
+    }
+
+
+    @GetMapping("/addlocation")
+    public String addlocationForm(Model model){
+        model.addAttribute("location", new Location());
+        return "locationform";
+    }
+
+    @PostMapping("/processlocationlist")
+    public String processlocationForm(@Valid Location location, BindingResult result, Model model){
+        {
+            if(result.hasErrors()){
+                return "locationform";
+            }
+            locationRepository.save(location);
+            model.addAttribute("alllocation",locationRepository.findAll());
+            return "locaitonlist";
         }
     }
 
