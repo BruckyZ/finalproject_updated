@@ -16,7 +16,7 @@ public class Location
 ////
 //    @NotNull
 //    @Size(min = 3)
-    private String location;
+    private String description;
 
     @ManyToMany(mappedBy = "locations")
     private Set<Trainer> training;
@@ -28,50 +28,42 @@ public class Location
     {
     }
 
-    public Location(String location)
+    public Location(String description)
     {
-        this.location = location;
+        this.description = description;
         this.training=new HashSet<Trainer>();
         this.clients=new HashSet<Client>();
     }
 
-    public long getId()
-    {
+    public long getId() {
         return id;
     }
 
-    public void setId(long id)
-    {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getLocation()
-    {
-        return location;
+    public String getDescription() {
+        return description;
     }
 
-    public void setLocation(String location)
-    {
-        this.location = location;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Set<Trainer> getTraining()
-    {
+    public Set<Trainer> getTraining() {
         return training;
     }
 
-    public void setTraining(Set<Trainer> training)
-    {
+    public void setTraining(Set<Trainer> training) {
         this.training = training;
     }
 
-    public Set<Client> getClients()
-    {
+    public Set<Client> getClients() {
         return clients;
     }
 
-    public void setClients(Set<Client> clients)
-    {
+    public void setClients(Set<Client> clients) {
         this.clients = clients;
     }
 }

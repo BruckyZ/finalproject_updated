@@ -19,13 +19,13 @@
                 <!--<div class="panel-body">-->
                 <table class="table">
                     <tr>
-                        <th>location</th>
+                        <th>description</th>
 
                         <!--//        <th>Actions</th>-->
 
                     </tr>
-                    <tr th:each="locate:${alllocation}">
-                        <td th:text="${locate.location}"></td>
+                    <tr th:each="location:${alllocation}">
+                        <td th:text="${location.description}"></td>
 
                         <!--<td>-->
                         <!--<a th:href="@{/update/{id}(id=${train.id})}">Update Trainer</a>-->
