@@ -15,7 +15,7 @@
             <h4 align="center"><strong>Login Here</strong></h4>
 
 
-<div th:if="${param.error}"> Invaild username and password </div>
+<div th:if="${param.error}" align="center"> Invaild username and password </div>
 <div th:if="${param.logout}"> You have logged out </div>
 
 <form th:action="@{/login}" method="post">
