@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="www.thymeleaf.org">
-<head th:replace="base::header">
-    <meta charset="UTF-8" />
-    <title>WorkFit Appointment Form</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
-    <!--My additional bootstrap-->
-    <link rel="stylesheet" th:href="@{/css/appointstylecss.css}" type="text/css"/>
-
-
-
+<head>
+    <meta charset="UTF-8"/>
+    <title>Add a Client</title>
+    <div th:replace="base::header"></div>
 </head>
+
 <body>
 <div class="container">
     <div class="row">
@@ -98,6 +91,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <button id="singlebutton" name="singlebutton" class="btn btn-default">Make An Appointment</button>
+                                    <button><a href="/index">Index Page</a></button></div>
                                 </div>
                             </div>
                         </div>

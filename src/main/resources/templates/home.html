@@ -1,98 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="www.thymeleaf.org">
+<html xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" th:href="@{/css/homepage.css}" type="text/css"/>
+    <title>WorkFit</title>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+    <!--<link rel="stylesheet" th:href="@{/css/workfitstyle.css}" type="text/css">-->
+    <link rel="stylesheet" href="css/workfitstyle.css"/>
 </head>
+
 <body>
+<div class="main">
+    <div class="container">
+        <a href="/index">
+            <h1>WorkFit</h1>
+        </a>
 
-<main class="site">
-    <section class="site-help">
-        <i aria-hidden="true" class="fa fa-question-circle"></i>
-    </section>
-    <section class="site-block site-hero">
-        <div class="site-hero-content">
-            <h1>
-                Work<br />Fit
-            </h1>
-            <p>
-                Personal Trainers In Your Pocket.<br />At Your Disposal.
-            </p>
-            <p>
-                <strong>Get Started<br /></strong><strong>Today!</strong>
-            </p>
-            <ul class="site-nav-sub bottom">
-                <li class="site-nav-sub-ele">
-                    <a class="site-nav-sub-button btn btn-tang" href="#"><span>Book a Trainer Today</span></a>
-                </li>
-                <li class="site-nav-sub-ele">
-                    <a class="site-nav-sub-button btn btn-tang" href="#"><span>Signup as a Client Today</span></a>
-                </li>
-            </ul>
+        <a class="btn" href="/index">Start Now</a>
+        <div class="col-md-4"><li><a href="/index"><strong>Login</strong></a></a></li></div>
+    </div>
+</div>
+
+<div class="supporting">
+    <div class="container">
+        <div class="col">
+            <a href="/index">
+                <h2>Sign up as a New Client</h2>
+            </a>
+            <p>Join our club in one of our locations to
+                get 24 hours access on-site</p>
         </div>
-    </section>
-    <section class="site-block site-invid site-block-yellow">
-        <div class="site-block-content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-8 col-sm-offset-3 col-md-6 col-md-offset-3">
-                        <section class="site-block site-invid site-block-yellow">
-                            <h1 class="header">
-                                Get Fit<br/>With WorkFit
-                            </h1>
-                            <header>
-                                <div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/jeremiah-wilson-1.jpg" alt>
-                                    <div class="item">
-                                        <div class="item-desc">
-                                            <p class="item-heading"><a href="/addclientform">Sign Up for New Clients</a></p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/jeremiah-wilson-2.jpg" alt>
-                                    <div class="item">
-                                        <div class="item-desc">
-                                            <p class="item-heading"><a href="/addtrainer">Sign Up for as Personal Trainer</a></p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/jeremiah-wilson-2.jpg" alt>
-                                    <div class="item">
-                                        <div class="item-desc">
-                                            <p class="item-heading"><a href="/addspeciality">Add Trainer Specialities</a></p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/jeremiah-wilson-3.jpg" alt>
-                                    <div class="item">
-                                        <div class="item-desc">
-                                            <p class="item-heading"><a href="/showtrainerlist">Browse Our Trainers</a></p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- images placed inside block elements to deal with a Firefox rendering bug affecting  scaled flexbox images -->
-                            </header>
-                        </section>
-
-
-                        <!--<ul class="site-nav-sub bottom">-->
-                        <!--<li class="site-nav-sub-ele">-->
-                        <!--<a class="site-nav-sub-button btn btn-tang" href="#"><span>Book a Trainer Today</span></a>-->
-                        <!--</li>-->
-                        <!--</ul>-->
-                    </div>
-                </div>
-            </div>
+        <div class="col">
+            <a href="/index">
+                <h2>Sign up as a Personal Trainer</h2>
+            </a>
+            <p>Our personal trainers will work to get you
+                in the best shape yet.</p>
         </div>
-    </section>
+        <div class="col">
+            <a href="/index">
+                <h2>Browse Personal Trainers</h2>
+            </a>
+            <p>Look for trainers in our locations who
+                will help you become your best self.</p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
 
-</main>
+<div class="feature">
+    <div class="container">
+        <h2>Never. Stop. Working.</h2>
+    </div>
+</div>
+
+<div class="supporting">
+    <div class="container">
+        <h2>Enroll</h2>
+        <p>Join our fitness club today.</p>
+        <a class="btn" href="/index">Learn More</a>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <h2>Stop scrolling. Start moving.</h2>
+        <a class="btn" href="/index">Start Now</a>
+    </div>
+</div>
 </body>
 </html>
-
